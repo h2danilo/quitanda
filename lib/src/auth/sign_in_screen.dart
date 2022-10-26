@@ -1,5 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:quitanda/src/auth/sign_up_screen.dart';
 
 import '../config/custom_colors.dart';
 import 'components/custom_text_field.dart';
@@ -30,7 +31,7 @@ class SignInScreen extends StatelessWidget {
                         ),
                         children: [
                           const TextSpan(
-                            text: 'Green',
+                            text: 'Valim',
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
@@ -157,7 +158,13 @@ class SignInScreen extends StatelessWidget {
                           ),
                           side:
                               const BorderSide(color: Colors.green, width: 2)),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(builder: (c) {
+                            return SignUpScreen();
+                          }),
+                        );
+                      },
                       child: const Text(
                         "Criar Conta",
                         style: TextStyle(fontSize: 18),
