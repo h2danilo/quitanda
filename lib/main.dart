@@ -1,7 +1,20 @@
+import 'dart:io';
+
+import 'package:desktop_window/desktop_window.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:quitanda/src/pages/auth/sign_in_screen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  if (!kIsWeb && (Platform.isWindows || Platform.isMacOS || Platform.isLinux)) {
+    await DesktopWindow.setMinWindowSize(const Size(400, 650));
+    await DesktopWindow.setFullScreen(true);
+  }
+
+  //Get.put(AuthController());
+
   runApp(const MyApp());
 }
 

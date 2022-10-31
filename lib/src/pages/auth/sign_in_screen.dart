@@ -13,12 +13,20 @@ class SignInScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
 
+    // Definindo nossa altura mínima para a tela de cadastro
+    // Se a altura da tela for maior ou igual a 600 a utilizamos como parâmetro caso contrário, definios 600 como altura mínima
+    final double height = size.height >= 600 ? size.height : 600;
+
+    // Definindo nossa largura mínima para a tela de cadastro
+    // Se a largura da tela for maior ou igual a 400 a utilizamos como parâmetro caso contrário, definios 400 como largura mínima
+    final double width = size.width >= 400 ? size.width : 400;
+
     return Scaffold(
       backgroundColor: CustomColors.customSwatchColor,
       body: SingleChildScrollView(
         child: SizedBox(
-          height: size.height,
-          width: size.width,
+          height: height,
+          width: width,
           child: Column(children: [
             Expanded(
               child: Column(
