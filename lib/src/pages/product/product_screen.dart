@@ -57,7 +57,7 @@ class _ProductScreenState extends State<ProductScreen> {
                           children: [
                             Expanded(
                               child: Text(
-                                widget.item.itemName * 10,
+                                widget.item.itemName,
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
